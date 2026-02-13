@@ -2,7 +2,9 @@ listaAlunos = []
 while True:
     aluno = []
     while True:
-        nome = str(input('Digite seu nome: ')).strip().lower()
+        nome = ''
+        while not nome.isalpha():
+            nome = str(input('Digite seu nome: ')).strip().lower()
         idade = ''
         while not idade.isnumeric():
             idade = str(input('Digite sua idade: ')).strip()
@@ -44,27 +46,32 @@ while True:
     print('0 - Sair')
     print('=' * 30)
     opcao = ' '
-    opcao = str(input('Digite uma opção: ')).strip()[0]        
-    int(opcao)
+    while not opcao.isnumeric():
+        opcao = str(input('Digite uma opção: ')).strip()[0]        
+    opcao = int(opcao)
     if opcao == 1:
         for cont in range(0, len(listaAlunos)):
-            print(f'''indice: {indice}/ nome: {listaAlunos[cont][0]}/ idade: {listaAlunos[cont][1]}/ sexo: {listaAlunos[cont][2]}''')
+            print('=' * 30)
+            print(f'''indice: {listaAlunos[cont][3]}/ nome: {listaAlunos[cont][0]}/ idade: {listaAlunos[cont][1]}/ sexo: {listaAlunos[cont][2]}''')
             print('=' * 30)
     elif opcao == 2:
         idade = int(input('Digite a idade: '))
         for cont in range(0, len(listaAlunos)):
             if idade == listaAlunos[cont][1]:
-                print(f'''indice: {indice}/ nome: {listaAlunos[cont][0]}/ idade: {listaAlunos[cont][1]}/ sexo: {listaAlunos[cont][2]}''')
+                print('=' * 30)
+                print(f'''indice: {listaAlunos[cont][3]}/ nome: {listaAlunos[cont][0]}/ idade: {listaAlunos[cont][1]}/ sexo: {listaAlunos[cont][2]}''')
                 print('=' * 30)
     elif opcao == 3:
         sexo = str(input('Digite o sexo:[M/F] ')).strip().upper()[0]
         for cont in range(0, len(listaAlunos)):
             if sexo == listaAlunos[cont][2]:
-                print(f'''indice: {indice}/ nome: {listaAlunos[cont][0]}/ idade: {listaAlunos[cont][1]}/ sexo: {listaAlunos[cont][2]}''')
+                print('=' * 30)
+                print(f'''indice: {listaAlunos[cont][3]}/ nome: {listaAlunos[cont][0]}/ idade: {listaAlunos[cont][1]}/ sexo: {listaAlunos[cont][2]}''')
                 print('=' * 30)
     elif opcao == 4:
         letra = str(input('Digite a letra: ')).strip().lower()[0]
         for cont in range(0, len(listaAlunos)):
             if letra == listaAlunos[cont][0][0]:
-                print(f'''indice: {indice}/ nome: {listaAlunos[cont][0]}/ idade: {listaAlunos[cont][1]}/ sexo: {listaAlunos[cont][2]}''')
+                print('=' * 30)
+                print(f'''indice: {listaAlunos[cont][3]}/ nome: {listaAlunos[cont][0]}/ idade: {listaAlunos[cont][1]}/ sexo: {listaAlunos[cont][2]}''')
                 print('=' * 30)
